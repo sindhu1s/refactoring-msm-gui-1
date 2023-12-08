@@ -2,14 +2,14 @@ class MoviesController < ApplicationController
   def index
     @list_of_movies = Movie.all.order({ :created_at => :desc })
 
-    render({ :template => "movie_templates/index" })
+    render({:template => "movie_templates/index" })
   end
 
   def show
     the_id = params.fetch("path_id")
     @the_movie = Movie.find(the_id)
 
-    render({ :template => "movie_templates/show" })
+    render({:template => "movie_templates/show" })
   end
 
   def create
